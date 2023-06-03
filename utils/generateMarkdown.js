@@ -45,51 +45,18 @@ function renderLicenseSection(license) {
 const licenseSections = {
   MIT: 'This application is covered under the [MIT License](https://opensource.org/licenses/MIT).',
   Apache: 'This application is covered under the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0).',
-  GPL: 'This application is covered under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0).',
+  GPL: 'This application is covered under the [GNU General Public License v3.0](https://opensource.org/license/gpl-3-0).',
 };
 
 if (licenseSections.hasOwnProperty(license)) {
-  return licenseSections[license]; // Return the license section
+  return licenseSections[license]; 
 }
 return "";
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-  ## Description
-  ${data.description}
-  
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  
-  ## Installation
-  ${data.installation}
-  
-  ## Usage
-  ${data.usage}
-  
-  ## License
-  This application is covered under the ${data.license} license.
-  
-  ## Contributing
-  ${data.contributing}
-  
-  ## Tests
-  ${data.tests}
-  
-  ## Questions
-  For additional questions, you can reach me through:
-  - GitHub: [${data.github}](https://github.com/${data.github})
-  - Email: ${data.email}
-  `;
-}
+// function generateMarkdown(data) {
+// }
 }
 
-module.exports = generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge;
+module.exports = {generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge};

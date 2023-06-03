@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('utils\generateMarkdown.js')
+const { generateMarkdown, renderLicenseBadge, renderLicenseLink, renderLicenseSection } = require('utils\generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -54,13 +54,13 @@ const questions = [
 ];
 
 // Function to generate the README content
-function generateMarkdown(answers) {
-    // Use the answers to populate the README template
+function generateMarkdown(data) {
+    
     const readmeTemplate = `
-  # ${answers.title}
+  # ${data.title}
   
   ## Description
-  ${answers.description}
+  ${data.description}
   
   ## Table of Contents
   - [Installation](#installation)
@@ -71,24 +71,24 @@ function generateMarkdown(answers) {
   - [Questions](#questions)
   
   ## Installation
-  ${answers.installation}
+  ${data.installation}
   
   ## Usage
-  ${answers.usage}
+  ${data.usage}
   
   ## License
-  This application is covered under the ${answers.license} license.
+  This application is covered under the ${data.license} license.
   
   ## Contributing
-  ${answers.contributing}
+  ${data.contributing}
   
   ## Tests
-  ${answers.tests}
+  ${data.tests}
   
   ## Questions
   For additional questions, you can reach me through:
-  - GitHub: [${answers.github}](https://github.com/${answers.github})
-  - Email: ${answers.email}
+  - GitHub: [${data.github}](https://github.com/${data.github})
+  - Email: ${data.email}
   `;
   
     return readmeTemplate;
@@ -112,8 +112,8 @@ function init() {
     
   inquirer
   .prompt(questions)
-  .then((answers) => {
-    const readMeContent = generateMarkdown(answers);
+  .then((data) => {
+    const readMeContent = generateMarkdown(data);
     writeToFile('README.md', readMeContent);
   })
   .catch((err) => {
