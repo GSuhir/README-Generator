@@ -2,7 +2,7 @@
   # README Generator
   
   ## Description
-  This is a node.js application that uses inquirer and asks the user a series of questions to then create a markdown fild with a high quality README.
+  This is a node.js application that uses inquirer and asks the user a series of questions to then create a markdown file with a high quality README.
   
   ## Table of Contents
   - [Installation](#installation)
@@ -13,7 +13,8 @@
   - [Questions](#questions)
   
   ## Installation
-  Make sure to install inquirer with npm i, and from command line, type "node index"
+  Make sure to install inquirer with npm i, and from command line, type "node index".  You can find an installation video here:
+  https://drive.google.com/file/d/1x_oVRMfs_7P_1bvQeAANAqTuBkYI_oTh/view?usp=drive_link
   
   ## Usage
   This can be used to make a README for your application.
