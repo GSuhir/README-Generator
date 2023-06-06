@@ -5,13 +5,13 @@ function renderLicenseBadge(license) {
     return '';
   }
 
-  const badges = {
+  const licenseBadges = {
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
     Apache: '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
     GPL: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://opensource.org/license/gpl-3-0/)',
   }
 
-  if (badges.hasOwnProperty(license)) {
+  if (licenseBadges.hasOwnProperty(license)) {
     return licenseBadges[license];
   }
   return "";
@@ -23,13 +23,13 @@ function renderLicenseLink(license) {
     return '';
 }
 
-const links = {
+const licenseLinks = {
   MIT: 'https://opensource.org/licenses/MIT',
   Apache: 'https://opensource.org/licenses/Apache-2.0',
   GPL: 'https://opensource.org/license/gpl-3-0/',
 };
 
-if (links.hasOwnProperty(license)) {
+if (licenseLinks.hasOwnProperty(license)) {
   return licenseLinks[license];
 }
 return "";
@@ -55,8 +55,8 @@ return "";
 }
 
 // TODO: Create a function to generate markdown for README
-// function generateMarkdown(data) {
-// }
+function generateMarkdown(data) {
+}
 }
 
 module.exports = {generateMarkdown, renderLicenseSection, renderLicenseLink, renderLicenseBadge};
